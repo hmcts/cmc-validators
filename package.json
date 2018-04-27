@@ -1,0 +1,41 @@
+{
+  "name": "@hmcts/cmc-validators",
+  "version": "0.0.1",
+  "author": "HMCTS",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hmcts/cmc-validators.git"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit && tslint --project tsconfig.json --format codeFrame && sass-lint -v -q",
+    "test": "mocha -r ts-node/register src/test/**/*.spec.ts",
+    "precommit": "yarn lint",
+    "prepush": "yarn test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "typescript": "^2.4.2",
+    "ts-node": "^3.3.0",
+    "class-transformer": "^0.1.7",
+    "class-validator": "^0.8.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "*",
+    "@types/chai": "^4.0.3",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/chai-spies": "^0.0.0",
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
+    "sinon-chai": "^3.0.0",
+    "mocha": "^5.0.3",
+    "mocha-junit-reporter": "^1.17.0",
+    "mocha-multi": "^1.0.1",
+    "mochawesome": "^3.0.2",
+    "tslint": "^5.5.0",
+    "sass-lint": "^1.10.2",
+    "tslint-config-standard": "^7.0.0"
+  }
+}
