@@ -1,0 +1,8 @@
+language: node_js
+cache: yarn
+script:
+  - yarn --version
+  - yarn check --integrity
+  - yarn setup
+  - yarn lint
+  - yarn test
