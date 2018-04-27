@@ -1,25 +1,49 @@
 # cmc-validators
 
-This is validator library, containing frontend validators used in CMC frontend applications.
+This is a validator library, containing frontend validators used in CMC frontend applications. 
+i.e [cmc-citizen-frontend](https://github.com/hmcts/cmc-citizen-frontend) and [cmc-legal-rep-frontend](https://github.com/hmcts/cmc-legal-rep-frontend)
 
-## Developing
+## Getting started
 
-### Code style
+### How to use it?
+
+#### Installation
+
+To add library to the project dependencies run:
+
+```bash
+$ yarn add @hmcts/cmc-validators
+```
+
+or
+
+```bash
+$ npm install @hmcts/cmc-validators
+```
+
+#### Dependencies
 
 Install dependencies by executing the following command:
 
  ```bash
 $ yarn install
  ```
- 
-We use [TSLint](https://palantir.github.io/tslint/) with [StandardJS](http://standardjs.com/index.html) rules alongside [sass-lint](https://github.com/sasstools/sass-lint)
 
-Running the linting:
-`yarn lint`
+#### Code style
 
-### Running the tests
+We use [TSLint](https://palantir.github.io/tslint/) with [StandardJS](http://standardjs.com/index.html) rules 
 
-Mocha is used for writing tests.
+Run the linting:
+
+```bash
+$ yarn lint
+```
+
+Linting will also run automatically prior to committing changes.
+
+#### Running the tests
+
+[Mocha](https://mochajs.org) is used for writing tests.
 
 Run them with:
 
@@ -27,11 +51,10 @@ Run them with:
 $ yarn test
 ```
 
-## Install
+For test coverage run:
 
-Run:
-```
-$ yarn add @hmcts/cmc-validators
+```bash
+$ yarn test:coverage
 ```
 
 ## License
