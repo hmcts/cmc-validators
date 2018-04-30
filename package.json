@@ -7,6 +7,8 @@
     "type": "git",
     "url": "git@github.com:hmcts/cmc-validators.git"
   },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "lint": "tsc --noEmit && tslint --project tsconfig.json --format codeFrame && sass-lint -v -q",
     "test": "TS_NODE_TYPE_CHECK=true mocha --opts mocha.opts --reporter-options reportFilename=unit,inlineAssets=true,reportTitle=cmc-validators 'src/test/**/*.ts'",
