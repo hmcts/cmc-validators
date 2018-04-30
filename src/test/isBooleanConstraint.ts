@@ -1,0 +1,58 @@
+import { expect } from 'chai'
+import { IsBooleanTrueConstraint, IsBooleanTrue } from '../main/isBooleanTrue'
+import { validateSync } from 'class-validator'
+
+class BooleanTrueTest {
+  @IsBooleanTrue()
+  boolValue?: boolean
+
+  constructor (boolValue?: boolean) {
+    this.boolValue = boolValue
+  }
+}
+
+describe('IsBooleanConstraint', () => {
+  const constraint: IsBooleanTrueConstraint = new IsBooleanTrueConstraint()
+
+  describe('validate', () => {
+
+    describe('should return true when ', () => {
+      it('given a valid case', () => {
+        expect(constraint.validate(true)).to.equal(true)
+      })
+    })
+
+    describe('should return false when ', () => {
+      it('given an invalid case', () => {
+        expect(constraint.validate(false)).to.equal(false)
+      })
+      it('given null', () => {
+        expect(constraint.validate(null)).to.equal(false)
+      })
+      it('given undefined', () => {
+        expect(constraint.validate(undefined)).to.equal(false)
+      })
+    })
+  })
+})
+
+describe('IsBooleanTrue', () => {
+
+  describe('validate', () => {
+
+    describe('should return true when ', () => {
+      it('given a valid case', () => {
+        expect(validateSync(new BooleanTrueTest(true))).to.length(0)
+      })
+    })
+
+    describe('should return false when ', () => {
+      it('given an invalid case', () => {
+        expect(validateSync(new BooleanTrueTest(false))).to.length(1)
+      })
+      it('given undefined', () => {
+        expect(validateSync(new BooleanTrueTest(undefined))).to.length(1)
+      })
+    })
+  })
+})
