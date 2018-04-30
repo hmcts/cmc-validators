@@ -1,61 +1,70 @@
 import { expect } from 'chai'
-import { IsValidPostcodeConstraint } from '../main/isValidPostcode'
+import { IsValidPostcode } from '../main/isValidPostcode'
+import { validateSync } from 'class-validator'
+
+class ValidPostcodeTest {
+  @IsValidPostcode()
+  value?: any
+
+  constructor (value?: any) {
+    this.value = value
+  }
+}
 
 describe('IsValidPostcodeConstraint', () => {
-  const constraint: IsValidPostcodeConstraint = new IsValidPostcodeConstraint()
 
   describe('validate', () => {
 
     describe('should return true when ', () => {
 
       it('given an undefined value', () => {
-        expect(constraint.validate(undefined)).to.equal(true)
+        expect(validateSync(new ValidPostcodeTest(undefined))).to.be.length(0)
       })
 
       it('given an null value', () => {
-        expect(constraint.validate(null)).to.equal(true)
+        expect(validateSync(new ValidPostcodeTest(null))).to.be.length(0)
       })
 
       it('given a valid postcode in lowercase', () => {
-        expect(constraint.validate('sw1h9aj')).to.equal(true)
+        expect(validateSync(new ValidPostcodeTest('sw1h9aj'))).to.be.length(0)
       })
 
       it('given a valid postcode in uppercase', () => {
-        expect(constraint.validate('SW1H9AJ')).to.equal(true)
+        expect(validateSync(new ValidPostcodeTest('SW1H9AJ'))).to.length(0)
       })
 
       it('given a valid postcode in mixed case', () => {
-        expect(constraint.validate('Sw1H9aJ')).to.equal(true)
+        expect(validateSync(new ValidPostcodeTest('Sw1H9aJ'))).to.length(0)
       })
 
       it('given a valid postcode in uppercase with space', () => {
-        expect(constraint.validate('SW1H 9AJ')).to.equal(true)
+        expect(validateSync(new ValidPostcodeTest('SW1H 9AJ'))).to.be.length(0)
       })
 
       describe('should return true for valid formats ', () => {
 
         it('given a valid postcode of format AN NAA', () => {
-          expect(constraint.validate('M1 1AA')).to.equal(true)
+          expect(validateSync(new ValidPostcodeTest('M1 1AA'))).to.be.length(0)
         })
 
         it('given a valid postcode of format ANN NAA', () => {
-          expect(constraint.validate('M60 1NW')).to.equal(true)
+          expect(validateSync(new ValidPostcodeTest('M60 1NW'))).to.be.length(0)
         })
 
         it('given a valid postcode of format AAN NAA', () => {
-          expect(constraint.validate('CR2 6HX')).to.equal(true)
+          expect(validateSync(new ValidPostcodeTest('CR2 6HX'))).to.be.length(0)
         })
 
         it('given a valid postcode of format AANN NAA', () => {
-          expect(constraint.validate('DN55 1PT')).to.equal(true)
+          expect(validateSync(new ValidPostcodeTest('DN55 1PT'))).to.be.length(0)
         })
 
         it('given a valid postcode of format ANA NAA', () => {
-          expect(constraint.validate('W1A 0AX')).to.equal(true)
+          expect(validateSync(new ValidPostcodeTest('W1A 0AX'))).to.be.length(0)
         })
 
         it('given a valid postcode of format AANA NAA', () => {
-          expect(constraint.validate('EC1A 1BB')).to.equal(true)
+          expect(validateSync(new ValidPostcodeTest('EC1A 1BB'))).to.be.length(0)
         })
       })
 
@@ -63,19 +72,19 @@ describe('IsValidPostcodeConstraint', () => {
 
     describe('should return false when ', () => {
       it('given an invalid postcode', () => {
-        expect(constraint.validate('aaaaa')).to.equal(false)
+        expect(validateSync(new ValidPostcodeTest('aaaaa'))).to.be.length(1)
       })
 
       it('given a number', () => {
-        expect(constraint.validate(123)).to.equal(false)
+        expect(validateSync(new ValidPostcodeTest(123))).to.be.length(1)
       })
 
       it('given an object', () => {
-        expect(constraint.validate({})).to.equal(false)
+        expect(validateSync(new ValidPostcodeTest({}))).to.be.length(1)
       })
 
       it('given an empty value', () => {
-        expect(constraint.validate('')).to.equal(false)
+        expect(validateSync(new ValidPostcodeTest(''))).to.be.length(1)
       })
     })
   })
