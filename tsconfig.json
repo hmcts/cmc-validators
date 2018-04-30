@@ -4,6 +4,9 @@
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "outDir": "dist/",
     "lib": [
       "es6",
       "es2016.array.include",

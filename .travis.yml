@@ -6,3 +6,12 @@ script:
   - yarn setup
   - yarn lint
   - yarn test
+  - yarn test:coverage
+deploy:
+  provider: npm
+  email: jenkins-reform@hmcts.net
+  api_key:
+    secure: cHIgCILjhTOC3ShmlaWVedNVUg/5rCjkeH8PX0dWmmkNBA6reR5N1s35CJ+oUzCXaunn2U52K1TSHindPQWfP2myGLd7QZ/2zGDN/8IkWl+dNUQDLp6/ngJIrmJLiKLKOPAJ22wpTjlxl07yxwojhsmfXd/HOgztLbpC142OZjimD41B2hc4TtRyjCqYl7VRA9j1MlZLd0qlgIjODcrPM/DNemRSt2fDVQoR5n7g/0uEEhApsc0ITf8fcY7LxkKG4ejOoQ8eaTQMex1SCQ5h/3ORRqIUXnbjJ5oB9gCNZNhd/Zyth17pSEiIwBBCOVsWnR09jdb1/3OQ2OPi3oT0vmBzEMnoPEmVxeBcpuhFK5DcxI5DkPIiHUqKPPuiw7+6oVbGoEDlxW7JqdHuYMmAEsIW3N3vNYywaBJ1VLepbZB3B8VMAz1JAEoanubWmXMhc7MVYi7z1X9uH7aT1gDfFNNM4AdweXDRZq3ZgHcY0EMa/JhEcon3mvfGj7vMSfE96QJtNGHaxgqcGbBzuqZIQ62Vapp4GUdJ/QxF06aQ1p1MDCzzR/5FjLwRT7WCqhPpzsYt6bs5u0CB8J8s6QJnlal7apTlLNkDHtlmnH9K95bR1lj+DFWWE6e3bhIUp5AU+C5s1MBQm+/6U6uEnZ+3Gqc2/gbIilmh4CYH4shs9w8=
+  on:
+    tags: true
+    repo: hmcts/cmc-validators
