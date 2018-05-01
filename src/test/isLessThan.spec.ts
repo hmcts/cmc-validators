@@ -19,7 +19,6 @@ describe('IsLessThan', () => {
 
     describe('should have no validation errors when ', () => {
       it('given an undefined value', () => {
-        expect(validateSync(new LessThanTest())).to.length(0)
         expect(validateSync(new LessThanTest(undefined))).to.be.length(0)
       })
 
