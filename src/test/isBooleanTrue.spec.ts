@@ -4,14 +4,14 @@ import { validateSync } from 'class-validator'
 
 class BooleanTrueTest {
   @IsBooleanTrue()
-  boolValue?: boolean
+  boolValue?: any
 
-  constructor (boolValue?: boolean) {
+  constructor (boolValue?: any) {
     this.boolValue = boolValue
   }
 }
 
-describe('IsBooleanConstraint', () => {
+describe('IsBooleanTrue', () => {
   const constraint: IsBooleanTrueConstraint = new IsBooleanTrueConstraint()
 
   describe('validate', () => {
@@ -49,6 +49,9 @@ describe('IsBooleanTrue', () => {
     describe('should return false when ', () => {
       it('given an invalid case', () => {
         expect(validateSync(new BooleanTrueTest(false))).to.length(1)
+      })
+      it('given null', () => {
+        expect(validateSync(new BooleanTrueTest(null))).to.length(1)
       })
       it('given undefined', () => {
         expect(validateSync(new BooleanTrueTest(undefined))).to.length(1)
