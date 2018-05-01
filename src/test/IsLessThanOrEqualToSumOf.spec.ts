@@ -24,29 +24,30 @@ describe('IsLessThanOrEqualToSumOf', () => {
 
     describe('should return true when ', () => {
       it('given an undefined value', () => {
-        expect(validateSync(new LessThanOrEqualToSumTest(undefined, DEFAULT_SUM, DEFAULT_VALUE))).to.be.length(0)
+        expect(validateSync(new LessThanOrEqualToSumTest(undefined, DEFAULT_SUM, DEFAULT_VALUE))).to.be.empty
       })
 
       it('given a value less than relatedProperty', () => {
-        expect(validateSync(new LessThanOrEqualToSumTest(10, DEFAULT_SUM, DEFAULT_VALUE))).to.be.length(0)
+        expect(validateSync(new LessThanOrEqualToSumTest(10, DEFAULT_SUM, DEFAULT_VALUE))).to.be.empty
       })
 
       it('given an undefined sum property', () => {
-        expect(validateSync(new LessThanOrEqualToSumTest(10, undefined, DEFAULT_SUM))).to.be.length(0)
+        expect(validateSync(new LessThanOrEqualToSumTest(10, undefined, DEFAULT_SUM))).to.be.empty
       })
     })
 
     describe('should return false when ', () => {
       it('given an undefined related property', () => {
-        expect(validateSync(new LessThanOrEqualToSumTest(10, DEFAULT_SUM, undefined))).to.be.length(1)
+        expect(validateSync(new LessThanOrEqualToSumTest(10, DEFAULT_SUM, undefined))).to.be.not.empty
       })
 
       it('given an equal value', () => {
-        expect(validateSync(new LessThanOrEqualToSumTest(DEFAULT_VALUE, DEFAULT_SUM, DEFAULT_VALUE))).to.be.length(1)
+        expect(validateSync(new LessThanOrEqualToSumTest(DEFAULT_VALUE, DEFAULT_SUM, DEFAULT_VALUE))).to.not.be.empty
       })
 
       it('given a greater value', () => {
-        expect(validateSync(new LessThanOrEqualToSumTest(DEFAULT_VALUE + 1, DEFAULT_SUM, DEFAULT_VALUE))).to.be.length(1)
+        expect(validateSync(
+          new LessThanOrEqualToSumTest(DEFAULT_VALUE + 1, DEFAULT_SUM, DEFAULT_VALUE))).to.not.be.empty
       })
     })
   })

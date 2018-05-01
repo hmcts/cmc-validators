@@ -19,21 +19,21 @@ describe('IsLessThan', () => {
 
     describe('should have no validation errors when ', () => {
       it('given an undefined value', () => {
-        expect(validateSync(new LessThanTest(undefined))).to.be.length(0)
+        expect(validateSync(new LessThanTest(undefined))).to.be.empty
       })
 
       it('given a value less than the target value', () => {
-        expect(validateSync(new LessThanTest(TARGET_VALUE - 1))).to.be.length(0)
+        expect(validateSync(new LessThanTest(TARGET_VALUE - 1))).to.be.empty
       })
     })
 
     describe('should return validation errors when ', () => {
       it('given an equal value to the target value', () => {
-        expect(validateSync(new LessThanTest(TARGET_VALUE))).to.be.length(1)
+        expect(validateSync(new LessThanTest(TARGET_VALUE))).to.not.be.empty
       })
 
       it('given a greater value than the target value', () => {
-        expect(validateSync(new LessThanTest(TARGET_VALUE + 1))).to.be.length(1)
+        expect(validateSync(new LessThanTest(TARGET_VALUE + 1))).to.not.be.empty
       })
     })
   })
