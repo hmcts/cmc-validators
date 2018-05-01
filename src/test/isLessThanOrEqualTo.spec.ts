@@ -18,7 +18,7 @@ describe('IsLessThanOrEqualTo', () => {
 
   describe('validate', () => {
 
-    describe('should return no error when ', () => {
+    describe('should return no error when', () => {
 
       it('given an undefined value', () => {
         expect(validateSync(new LessThanOrEqualTest(undefined))).to.be.empty
@@ -33,7 +33,7 @@ describe('IsLessThanOrEqualTo', () => {
       })
     })
 
-    describe('should return an error when ', () => {
+    describe('should return an error when', () => {
 
       it('given a greater value', () => {
         expect(validateSync(new LessThanOrEqualTest(TARGET_VALUE + 1))).to.not.be.empty

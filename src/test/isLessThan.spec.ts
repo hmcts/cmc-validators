@@ -16,8 +16,7 @@ class LessThanTest {
 
 describe('IsLessThan', () => {
   describe('validate', () => {
-
-    describe('should have no validation errors when ', () => {
+    describe('should have no validation errors when', () => {
       it('given an undefined value', () => {
         expect(validateSync(new LessThanTest(undefined))).to.be.empty
       })
@@ -27,7 +26,7 @@ describe('IsLessThan', () => {
       })
     })
 
-    describe('should return validation errors when ', () => {
+    describe('should return validation errors when', () => {
       it('given an equal value to the target value', () => {
         expect(validateSync(new LessThanTest(TARGET_VALUE))).to.not.be.empty
       })

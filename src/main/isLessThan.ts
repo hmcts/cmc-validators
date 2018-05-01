@@ -21,6 +21,24 @@ export class IsLessThanConstraint implements ValidatorConstraintInterface {
   }
 }
 
+/**
+ * Marks a variable to be validated as less than a given property
+ * @param {string} property the name of the property to be validated against
+ * @param {ValidationOptions} validationOptions
+ *
+ * @example
+ * class LessThanTest {
+ *  <at>IsLessThan('targetValue')
+ *  value?: any
+ *  targetValue: number = 3
+ *  constructor (value?: any) {
+ *    this.value = value
+ *  }
+ * }
+ * lessThan: LessThanTest = new LessThanTest(25)
+ * //Will return a validation error as 25 is greater than 3
+ * errors: ValidationError[] = validateSync(lessThan)
+ */
 export function IsLessThan (property: string, validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
     registerDecorator({

@@ -15,7 +15,7 @@ describe('IsNotBlank', () => {
 
   describe('validate', () => {
 
-    describe('should return true when ', () => {
+    describe('should return true when', () => {
 
       it('given an undefined value', () => {
         expect(validateSync(new NotBlankTest(undefined))).to.be.empty
@@ -26,7 +26,7 @@ describe('IsNotBlank', () => {
       })
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
 
       it('given an non string value', () => {
         expect(validateSync(new NotBlankTest(true))).to.not.be.empty

@@ -15,13 +15,13 @@ describe('IsBooleanTrue', () => {
 
   describe('validate', () => {
 
-    describe('should return true when ', () => {
+    describe('should return true when', () => {
       it('given a valid case', () => {
         expect(validateSync(new BooleanTrueTest(true))).to.be.empty
       })
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
       it('given an invalid case', () => {
         expect(validateSync(new BooleanTrueTest(false))).to.not.be.empty
       })

@@ -22,7 +22,7 @@ describe('IsLessThanOrEqualToSumOf', () => {
 
   describe('validate', () => {
 
-    describe('should return true when ', () => {
+    describe('should return true when', () => {
       it('given an undefined value', () => {
         expect(validateSync(new LessThanOrEqualToSumTest(undefined, DEFAULT_SUM, DEFAULT_VALUE))).to.be.empty
       })
@@ -36,7 +36,7 @@ describe('IsLessThanOrEqualToSumOf', () => {
       })
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
       it('given an undefined related property', () => {
         expect(validateSync(new LessThanOrEqualToSumTest(10, DEFAULT_SUM, undefined))).to.be.not.empty
       })
@@ -61,7 +61,7 @@ describe('IsLessThanOrEqualToSumOfConstraint', () => {
     property: '',
     constraints: ['exampleConstraint']
   }
-  describe('Should throw an error when ', () => {
+  describe('Should throw an error when', () => {
     it('given less than two validation arguments', () => {
       expect(() => {
         new IsLessThanOrEqualToSumOfConstraint().validate(1, args)

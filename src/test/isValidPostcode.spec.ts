@@ -15,7 +15,7 @@ describe('IsValidPostcodeConstraint', () => {
 
   describe('validate', () => {
 
-    describe('should return true when ', () => {
+    describe('should return true when', () => {
 
       it('given an undefined value', () => {
         expect(validateSync(new ValidPostcodeTest(undefined))).to.be.empty
@@ -41,7 +41,7 @@ describe('IsValidPostcodeConstraint', () => {
         expect(validateSync(new ValidPostcodeTest('SW1H 9AJ'))).to.be.empty
       })
 
-      describe('should return true for valid formats ', () => {
+      describe('should return true for valid formats', () => {
 
         it('given a valid postcode of format AN NAA', () => {
           expect(validateSync(new ValidPostcodeTest('M1 1AA'))).to.be.empty
@@ -70,7 +70,7 @@ describe('IsValidPostcodeConstraint', () => {
 
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
       it('given an invalid postcode', () => {
         expect(validateSync(new ValidPostcodeTest('aaaaa'))).to.be.not.empty
       })
