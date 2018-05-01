@@ -15,10 +15,18 @@
     ],
     "target": "es6",
     "module": "commonjs",
-    "baseUrl": "src/main",
+    "baseUrl": "src",
     "typeRoots": [
       "./node_modules/@types",
       "./types"
-    ]
+    ],
+    "paths": {
+      "validators/*":[
+        "main/*"
+      ],
+      "test/*": [
+        "test/*"
+      ]
+    }
   }
 }
