@@ -1,12 +1,14 @@
 {
   "name": "@hmcts/cmc-validators",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "author": "HMCTS",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:hmcts/cmc-validators.git"
   },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "lint": "tsc --noEmit && tslint --project tsconfig.json --format codeFrame && sass-lint -v -q",
     "test": "TS_NODE_TYPE_CHECK=true mocha --opts mocha.opts --reporter-options reportFilename=unit,inlineAssets=true,reportTitle=cmc-validators 'src/test/**/*.ts'",
@@ -22,8 +24,6 @@
     "access": "public"
   },
   "dependencies": {
-    "typescript": "^2.4.2",
-    "ts-node": "^3.3.0",
     "class-validator": "^0.8.1"
   },
   "devDependencies": {
@@ -31,6 +31,8 @@
     "@types/chai": "^4.0.3",
     "@types/chai-as-promised": "^7.1.0",
     "@types/chai-spies": "^0.0.0",
+    "typescript": "^2.4.2",
+    "ts-node": "^3.3.0",
     "nyc": "^11.2.1",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
