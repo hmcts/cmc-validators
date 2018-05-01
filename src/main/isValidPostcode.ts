@@ -11,7 +11,7 @@ import * as validator from 'validator'
 @ValidatorConstraint()
 export class IsValidPostcodeConstraint implements ValidatorConstraintInterface {
   validate (value: any, args?: ValidationArguments): boolean {
-    if (value === undefined || value === null) {
+    if (value === undefined || value === null || args === undefined) {
       return true
     }
     const UK_POSTCODE_REGEX = /^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))[0-9][A-Za-z]{2})$/

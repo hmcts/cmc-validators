@@ -54,10 +54,10 @@ describe('IsLessThanOrEqualToSumOf', () => {
 
 describe('IsLessThanOrEqualToSumOfConstraint', () => {
   const args: ValidationArguments = {
-    value: undefined,
-    targetName: undefined,
+    value: '',
+    targetName: '',
     object: {},
-    property: undefined,
+    property: '',
     constraints: ['exampleConstraint']
   }
   describe('Should throw an error when ', () => {

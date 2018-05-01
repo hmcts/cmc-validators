@@ -9,7 +9,7 @@ import {
 @ValidatorConstraint()
 export class IsLessThanOrEqualToSumOfConstraint implements ValidatorConstraintInterface {
   validate (value: any, args?: ValidationArguments) {
-    if (value === undefined) {
+    if (value === undefined || args === undefined) {
       return true
     }
     const argsLength = args.constraints.length

@@ -10,7 +10,7 @@ import {
 export class IsNotBlankConstraint implements ValidatorConstraintInterface {
 
   validate (value?: any, args?: ValidationArguments): boolean {
-    if (value === undefined) {
+    if (value === undefined || args === undefined) {
       return true
     }
 
