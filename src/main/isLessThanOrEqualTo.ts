@@ -41,7 +41,7 @@ export class IsLessThanOrEqualToConstraint implements ValidatorConstraintInterfa
 export function IsLessThanOrEqualTo (property: string, validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'isLessThan',
+      name: 'isLessThanOrEqualTo',
       target: object.constructor,
       propertyName: propertyName,
       constraints: [property],
