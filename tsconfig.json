@@ -4,8 +4,8 @@
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "strictNullChecks": true,
     "declaration": true,
+    "strictNullChecks": true,
     "outDir": "dist/",
     "lib": [
       "es6",

@@ -1,5 +1,8 @@
 {
   "extends": "tslint-config-standard",
+  "rulesDirectory": [
+    "tslint-no-unused-expression-chai"
+  ],
   "rules": {
     "member-ordering": [
       true,
@@ -21,6 +24,9 @@
     ],
     "no-default-export": true,
     "no-floating-promises": false,
-    "no-console": true
+    "no-console": true,
+    "no-unused-expression": false,
+    "no-unused-expression-chai": true
   }
+
 }
