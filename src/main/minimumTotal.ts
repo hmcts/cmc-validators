@@ -5,7 +5,7 @@ import {
 @ValidatorConstraint()
 export class MinTotalConstraint implements ValidatorConstraintInterface {
 
-  validate (value: any, validationArguments: ValidationArguments): boolean {
+  validate (value: any, args: ValidationArguments): boolean {
     if (value === undefined) {
       return true
     }
@@ -14,7 +14,7 @@ export class MinTotalConstraint implements ValidatorConstraintInterface {
       throw new Error('Expected validated element to be an array')
     }
 
-    const minValue: number = this.extractMinValue(validationArguments)
+    const minValue: number = this.extractMinValue(args)
     let total: number = 0
     for (let row of value) {
       if (typeof row.amount === 'number') {
@@ -25,10 +25,10 @@ export class MinTotalConstraint implements ValidatorConstraintInterface {
     return total >= minValue
   }
 
-  private extractMinValue (validationArguments: ValidationArguments): number {
-    let minValue = validationArguments.constraints[0]
+  private extractMinValue (args: ValidationArguments): number {
+    let minValue = args.constraints[0]
     if (typeof minValue === 'string') {
-      minValue = (validationArguments.object as any)[minValue]
+      minValue = (args.object as any)[minValue]
     }
     if (typeof minValue !== 'number') {
       throw new Error('Minimal required value parameter not given')

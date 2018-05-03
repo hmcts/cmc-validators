@@ -8,8 +8,8 @@ import {
 
 @ValidatorConstraint()
 export class MaxLengthValidatorConstraint implements ValidatorConstraintInterface {
-  validate (value: any, args?: ValidationArguments): boolean {
-    if (value === undefined || args === undefined) {
+  validate (value: any, args: ValidationArguments): boolean {
+    if (value === undefined) {
       return true
     }
     const [maxLength] = args.constraints
