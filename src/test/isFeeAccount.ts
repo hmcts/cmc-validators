@@ -15,7 +15,7 @@ describe('IsFeeAccount', () => {
 
   describe('validate', () => {
     describe('should return true when', () => {
-      it('given an valid reference ', () => {
+      it('given an valid reference', () => {
         expect(validateSync(new IsFeeAccountTest('PBA1234567'))).to.be.empty
       })
 
@@ -40,7 +40,7 @@ describe('IsFeeAccount', () => {
       })
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
 
       it('given an empty string', () => {
         expect(validateSync(new IsFeeAccountTest(''))).to.not.be.empty
