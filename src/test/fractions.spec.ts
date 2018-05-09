@@ -34,6 +34,10 @@ describe('Fractions', () => {
         expect(validateSync(new FractionsTest(undefined, 1,2))).to.be.empty
       })
 
+      it('given null value', () => {
+        expect(validateSync(new FractionsTest(null, 1, 2))).to.be.empty
+      })
+
       it('given a valid decimal up to three decimal places', () => {
         expect(validateSync(new FractionsTest(10.123, 0, 3))).to.be.empty
       })
