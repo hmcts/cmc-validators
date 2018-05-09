@@ -1,9 +1,9 @@
 import { expect } from 'chai'
-import { IsPhoneNumber } from '../main/isPhoneNumber'
+import { IsMobilePhoneNumber } from '../main/isMobilePhoneNumber'
 import { validateSync } from 'class-validator'
 
 class PhoneNumberTest {
-  @IsPhoneNumber()
+  @IsMobilePhoneNumber()
   value: any
 
   constructor (value: any) {
@@ -14,7 +14,7 @@ class PhoneNumberTest {
 /**
  * The tests below are aligned to what GOV.UK Notify is accepting and not how we would like to validate phone numbers.
  */
-describe('IsPhoneNumber', () => {
+describe('IsMobilePhoneNumber', () => {
 
   describe('validate', () => {
     describe('for land line numbers', () => {
