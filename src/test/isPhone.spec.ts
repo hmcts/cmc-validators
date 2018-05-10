@@ -11,9 +11,6 @@ class PhoneNumberTest {
   }
 }
 
-/**
- * The tests below are aligned to what GOV.UK Notify is accepting and not how we would like to validate phone numbers.
- */
 describe('IsPhoneNumber', () => {
   describe('validate', () => {
     describe('for land line numbers', () => {
