@@ -30,8 +30,6 @@ export class IsPhoneNumberConstraint implements ValidatorConstraintInterface {
 
 /**
  * Verify a valid UK phone number (Landline or mobile).
- *
- * The validation is aligned to match what GOV.UK Notify is accepting.
  */
 export function IsPhoneNumber (validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
