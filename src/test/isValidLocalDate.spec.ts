@@ -24,7 +24,7 @@ class LocalDateImpl implements LocalDate {
   }
 }
 
-describe('IsValidLocalDateConstraint', () => {
+describe('IsValidLocalDate', () => {
 
   describe('validate', () => {
     it('should accept undefined value', () => {

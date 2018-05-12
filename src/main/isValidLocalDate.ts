@@ -11,7 +11,7 @@ import { LocalDate } from './interface/date'
 @ValidatorConstraint()
 export class IsValidLocalDateConstraint implements ValidatorConstraintInterface {
 
-  validate (value: any | LocalDate, args?: ValidationArguments): boolean {
+  validate (value: any | LocalDate, args: ValidationArguments): boolean {
     if (value == null) {
       return true
     }
