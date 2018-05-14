@@ -8,6 +8,8 @@ import {
 
 import { LocalDate } from './interface/date'
 
+const EXPECTED_YEAR_LENGTH: number = 4
+
 @ValidatorConstraint()
 export class IsValidLocalDateConstraint implements ValidatorConstraintInterface {
 
@@ -16,11 +18,12 @@ export class IsValidLocalDateConstraint implements ValidatorConstraintInterface 
       return true
     }
 
-    if (!value.toMoment) {
+    if (!value.toMoment || !value.year) {
       return false
     }
 
-    return value.toMoment().isValid()
+    return value.toMoment().isValid() && Number(value.year).toString().length === EXPECTED_YEAR_LENGTH
+
   }
 
 }

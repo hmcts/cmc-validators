@@ -14,13 +14,18 @@ class ValidLocalDateTest {
 }
 
 class LocalDateImpl implements LocalDate {
-  value: string
+  day: any
+  month: any
+  year: any
 
-  constructor (value: string) {
-    this.value = value
+  constructor (day: any, month: any, year: any) {
+    this.day = day
+    this.month = month
+    this.year = year
   }
+
   toMoment (): moment.Moment {
-    return moment(this.value)
+    return moment(this.month + '-' + this.day + '-' + this.year)
   }
 }
 
@@ -40,16 +45,20 @@ describe('IsValidLocalDate', () => {
     })
 
     it('should reject incomplete dates', () => {
-      expect(validateSync(new ValidLocalDateTest(new LocalDateImpl('01-1992')))).to.not.be.empty
+      expect(validateSync(new ValidLocalDateTest(new LocalDateImpl(undefined, 1, 1992)))).to.not.be.empty
     })
 
     it('should reject non existing dates', () => {
-      expect(validateSync(new ValidLocalDateTest(new LocalDateImpl('13-01-2000')))).to.not.be.empty
+      expect(validateSync(new ValidLocalDateTest(new LocalDateImpl(1, 13, 2000)))).to.not.be.empty
     })
 
     it('should accept valid dates', () => {
-      let errors = validateSync(new ValidLocalDateTest(new LocalDateImpl('06-28-1969')))
-      expect(errors).to.be.empty
+      expect(validateSync(new ValidLocalDateTest(new LocalDateImpl(28, 6, 1969)))).to.be.empty
     })
+
+    it('should reject a year with less that 4 digits', () => {
+      expect(validateSync(new ValidLocalDateTest(new LocalDateImpl(1, 1, 11)))).to.not.be.empty
+    })
+
   })
 })
