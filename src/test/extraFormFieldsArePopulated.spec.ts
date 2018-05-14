@@ -17,13 +17,13 @@ describe('ExtraFormFieldsArePopulatedConstraint', () => {
 
   describe('validate', () => {
 
-    describe('should return true when ', () => {
+    describe('should return true when', () => {
       it('all fields are populated', () => {
         expect(validateSync(new ExtraFormFieldsArePopulatedTest('Filled', 'Filled'))).to.be.empty
       })
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
       it('first field is unpopulated', () => {
         expect(validateSync(new ExtraFormFieldsArePopulatedTest(undefined, 'Filled'))).to.not.be.empty
       })
