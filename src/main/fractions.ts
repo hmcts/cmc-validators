@@ -23,7 +23,6 @@ export class FractionsConstraint implements ValidatorConstraintInterface {
       throw new Error('Maximum allowed decimal places has to be specified and positive value')
     }
 
-    // TODO: "value !== 'number'" should be removed once the legal frontend is in a state to do so
     if (value === undefined || typeof value !== 'number') {
       return true
     }
