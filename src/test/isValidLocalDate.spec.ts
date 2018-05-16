@@ -25,7 +25,7 @@ class LocalDateImpl implements LocalDate {
   }
 
   toMoment (): moment.Moment {
-    return moment(this.month + '-' + this.day + '-' + this.year)
+    return moment(`${this.year}-${this.month}-${this.day}`)
   }
 }
 
