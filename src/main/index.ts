@@ -1,7 +1,6 @@
 export * from './atLeastOneFieldIsPopulated'
 export * from './extraFormFieldsArePopulated'
 export * from './fractions'
-export * from './index'
 export * from './isBooleanTrue'
 export * from './isEmail'
 export * from './isFeeAccount'
