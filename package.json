@@ -1,6 +1,6 @@
 {
   "name": "@hmcts/cmc-validators",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "HMCTS",
   "license": "MIT",
   "repository": {
@@ -43,6 +43,7 @@
     "mocha-junit-reporter": "^1.17.0",
     "mocha-multi": "^1.0.1",
     "mochawesome": "^3.0.2",
+    "moment": "^2.18.1",
     "tslint": "^5.5.0",
     "sass-lint": "^1.10.2",
     "tslint-config-standard": "^7.0.0",
