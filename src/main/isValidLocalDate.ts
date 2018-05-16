@@ -22,7 +22,7 @@ export class IsValidLocalDateConstraint implements ValidatorConstraintInterface 
       return false
     }
 
-    return value.toMoment().isValid() && Number(value.year).toString().length === EXPECTED_YEAR_LENGTH
+    return Number(value.year).toString().length === EXPECTED_YEAR_LENGTH && value.toMoment().isValid()
 
   }
 
