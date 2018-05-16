@@ -16,7 +16,7 @@ describe('AtLeastOneFieldIsPopulatedConstraint', () => {
 
   describe('validate', () => {
 
-    describe('should return true when ', () => {
+    describe('should return true when', () => {
 
       it('undefined given', () => {
         expect(validateSync(new AtLeastOneFieldIsPopulatedTest(undefined))).to.be.empty
@@ -34,7 +34,7 @@ describe('AtLeastOneFieldIsPopulatedConstraint', () => {
         expect(validateSync(new AtLeastOneFieldIsPopulatedTest({ a: '\t', b: '\n', c: '    ' }))).to.be.empty
       })
 
-      it('all fields are populated with nested objects',() => {
+      it('all fields are populated with nested objects', () => {
         expect(validateSync(new AtLeastOneFieldIsPopulatedTest({ a: {}, b: [] }))).to.be.empty
       })
 
@@ -48,7 +48,7 @@ describe('AtLeastOneFieldIsPopulatedConstraint', () => {
       })
     })
 
-    describe('should return false when ', () => {
+    describe('should return false when', () => {
 
       it('empty strings given', () => {
         expect(validateSync(new AtLeastOneFieldIsPopulatedTest({ a: '', b: '', c: '' }))).to.not.be.empty
