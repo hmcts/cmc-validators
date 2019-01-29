@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "class-validator": "^0.9.1"
+    "@hmcts/class-validator": "^0.9.1-b"
   },
   "devDependencies": {
     "@types/mocha": "*",

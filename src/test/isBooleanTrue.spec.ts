@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { IsBooleanTrue } from '../main/isBooleanTrue'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class BooleanTrueTest {
   @IsBooleanTrue()

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { Fractions } from '../main/fractions'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class FractionsTest {
   @Fractions('minValue', 'maxValue')

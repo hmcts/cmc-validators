@@ -4,7 +4,7 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
   ValidationArguments
-} from 'class-validator'
+} from '@hmcts/class-validator'
 
 import * as validator from 'validator'
 

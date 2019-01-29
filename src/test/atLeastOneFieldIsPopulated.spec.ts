@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { AtLeastOneFieldIsPopulated } from '../main/atLeastOneFieldIsPopulated'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class AtLeastOneFieldIsPopulatedTest {
   @AtLeastOneFieldIsPopulated()

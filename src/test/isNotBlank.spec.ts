@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { IsNotBlank } from '../main/isNotBlank'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class NotBlankTest {
   @IsNotBlank()

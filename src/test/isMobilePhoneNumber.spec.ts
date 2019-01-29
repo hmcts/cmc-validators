@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { IsMobilePhoneNumber } from '../main/isMobilePhoneNumber'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class MobilePhoneNumberTest {
   @IsMobilePhoneNumber()

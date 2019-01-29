@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { ExtraFormFieldsArePopulated } from '../main/extraFormFieldsArePopulated'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class ExtraFormFieldsArePopulatedTest {
   @ExtraFormFieldsArePopulated(['field1', 'field2'])

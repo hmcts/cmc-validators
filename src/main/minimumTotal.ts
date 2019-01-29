@@ -1,6 +1,6 @@
 import {
   registerDecorator, ValidationArguments, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface
-} from 'class-validator'
+} from '@hmcts/class-validator'
 
 @ValidatorConstraint()
 export class MinTotalConstraint implements ValidatorConstraintInterface {
