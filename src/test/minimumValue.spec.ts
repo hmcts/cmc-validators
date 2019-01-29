@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { Min } from '../main/minimumValue'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 const MINIMUM_VALUE: number = 200
 

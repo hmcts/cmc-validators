@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 
 import { MinTotal } from '../main/minimumTotal'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 const TARGET_VALUE = 100
 

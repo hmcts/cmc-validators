@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { IsLessThan } from '../main/isLessThan'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 const TARGET_VALUE: number = 200
 

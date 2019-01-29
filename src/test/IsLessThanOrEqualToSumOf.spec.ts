@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { IsLessThanOrEqualToSumOf, IsLessThanOrEqualToSumOfConstraint } from '../main/isLessThanOrEqualToSumOf'
-import { validateSync, ValidationArguments } from 'class-validator'
+import { validateSync, ValidationArguments } from '@hmcts/class-validator'
 
 const DEFAULT_SUM = 30
 const DEFAULT_VALUE = 200

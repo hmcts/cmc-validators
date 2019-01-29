@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 import { MaxLength } from '../main/maximumLength'
 
 const TARGET_LENGTH: number = 10

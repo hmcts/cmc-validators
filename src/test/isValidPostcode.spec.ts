@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { IsValidPostcode } from '../main/isValidPostcode'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class ValidPostcodeTest {
   @IsValidPostcode()

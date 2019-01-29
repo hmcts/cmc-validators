@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { IsValidLocalDate } from '../main/isValidLocalDate'
 import { LocalDate } from '../main/interface/date'
 import * as moment from 'moment'
-import { validateSync } from 'class-validator'
+import { validateSync } from '@hmcts/class-validator'
 
 class ValidLocalDateTest {
   @IsValidLocalDate()
