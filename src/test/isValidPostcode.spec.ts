@@ -15,7 +15,7 @@ describe('IsValidPostcodeConstraint', () => {
 
   describe('validate', () => {
 
-    describe('should return true when', () => {
+    context('should return true when', () => {
 
       it('given an undefined value', () => {
         expect(validateSync(new ValidPostcodeTest(undefined))).to.be.empty
@@ -40,39 +40,42 @@ describe('IsValidPostcodeConstraint', () => {
       it('given a valid postcode in uppercase with space', () => {
         expect(validateSync(new ValidPostcodeTest('SW1H 9AJ'))).to.be.empty
       })
-
-      describe('should return true for valid formats', () => {
-
-        it('given a valid postcode of format AN NAA', () => {
-          expect(validateSync(new ValidPostcodeTest('M1 1AA'))).to.be.empty
-        })
-
-        it('given a valid postcode of format ANN NAA', () => {
-          expect(validateSync(new ValidPostcodeTest('M60 1NW'))).to.be.empty
-        })
-
-        it('given a valid postcode of format AAN NAA', () => {
-          expect(validateSync(new ValidPostcodeTest('CR2 6HX'))).to.be.empty
-        })
-
-        it('given a valid postcode of format AANN NAA', () => {
-          expect(validateSync(new ValidPostcodeTest('DN55 1PT'))).to.be.empty
-        })
-
-        it('given a valid postcode of format ANA NAA', () => {
-          expect(validateSync(new ValidPostcodeTest('W1A 0AX'))).to.be.empty
-        })
-
-        it('given a valid postcode of format AANA NAA', () => {
-          expect(validateSync(new ValidPostcodeTest('EC1A 1BB'))).to.be.empty
-        })
-      })
-
     })
 
-    describe('should return false when', () => {
+    context('should return true for valid formats', () => {
+
+      it('given a valid postcode of format AN NAA', () => {
+        expect(validateSync(new ValidPostcodeTest('M1 1AA'))).to.be.empty
+      })
+
+      it('given a valid postcode of format ANN NAA', () => {
+        expect(validateSync(new ValidPostcodeTest('M60 1NW'))).to.be.empty
+      })
+
+      it('given a valid postcode of format AAN NAA', () => {
+        expect(validateSync(new ValidPostcodeTest('CR2 6HX'))).to.be.empty
+      })
+
+      it('given a valid postcode of format AANN NAA', () => {
+        expect(validateSync(new ValidPostcodeTest('DN55 1PT'))).to.be.empty
+      })
+
+      it('given a valid postcode of format ANA NAA', () => {
+        expect(validateSync(new ValidPostcodeTest('W1A 0AX'))).to.be.empty
+      })
+
+      it('given a valid postcode of format AANA NAA', () => {
+        expect(validateSync(new ValidPostcodeTest('EC1A 1BB'))).to.be.empty
+      })
+    })
+
+    context('should return false when', () => {
       it('given an invalid postcode', () => {
         expect(validateSync(new ValidPostcodeTest('aaaaa'))).to.be.not.empty
+      })
+
+      it('given a valid postcode with extra chars', () => {
+        expect(validateSync(new ValidPostcodeTest('ECY1 8JL'))).to.be.not.empty
       })
 
       it('given a number', () => {
