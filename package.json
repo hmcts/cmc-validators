@@ -1,6 +1,6 @@
 {
   "name": "@hmcts/cmc-validators",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "HMCTS",
   "license": "MIT",
   "repository": {
@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@hmcts/class-validator": "^0.9.1-b"
+    "@hmcts/class-validator": "^0.9.1-e"
   },
   "devDependencies": {
     "@types/mocha": "*",
