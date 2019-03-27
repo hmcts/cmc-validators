@@ -37,6 +37,10 @@ export class AreValidLocalDatesConstraint implements ValidatorConstraintInterfac
       return true
     }
 
+    if (!values.some) {
+      return false
+    }
+
     return !(values as LocalDate[]).some(value => !this.dateConstraint.validate(value, args))
   }
 }
