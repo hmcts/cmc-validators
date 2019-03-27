@@ -14,7 +14,7 @@ const EXPECTED_YEAR_LENGTH: number = 4
 export class IsValidLocalDateConstraint implements ValidatorConstraintInterface {
 
   validate (value: any | LocalDate, args: ValidationArguments): boolean {
-    if (value == null) {
+    if (!value) {
       return true
     }
 
@@ -28,6 +28,19 @@ export class IsValidLocalDateConstraint implements ValidatorConstraintInterface 
 
 }
 
+@ValidatorConstraint()
+export class AreValidLocalDatesConstraint implements ValidatorConstraintInterface {
+  private dateConstraint: IsValidLocalDateConstraint = new IsValidLocalDateConstraint()
+
+  validate (values: any | LocalDate[], args: ValidationArguments): boolean {
+    if (!values) {
+      return true
+    }
+
+    return !(values as LocalDate[]).some(value => !this.dateConstraint.validate(value, args))
+  }
+}
+
 /**
  * Verify is a valid local date.
  */
@@ -38,7 +51,9 @@ export function IsValidLocalDate (validationOptions?: ValidationOptions) {
       propertyName: propertyName,
       options: validationOptions,
       constraints: [],
-      validator: IsValidLocalDateConstraint
+      validator: (validationOptions && validationOptions.each)
+        ? AreValidLocalDatesConstraint
+        : IsValidLocalDateConstraint
     })
   }
 }
