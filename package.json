@@ -31,7 +31,7 @@
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "^7.1.0",
     "@types/chai-spies": "^1.0.0",
-    "typescript": "^3.1.1",
+    "typescript": "^3.6.2",
     "ts-node": "^7.0.1",
     "nyc": "^13.0.1",
     "chai": "^4.2.0",
