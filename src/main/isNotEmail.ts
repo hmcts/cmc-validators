@@ -9,27 +9,25 @@ import {
 import * as validator from 'validator'
 
 @ValidatorConstraint()
-export class IsEmailConstraint implements ValidatorConstraintInterface {
+export class IsNotEmailConstraint implements ValidatorConstraintInterface {
 
   validate (value: any, args: ValidationArguments): boolean {
-    return typeof value === 'string' && (value.length !== 0 && !validator.isEmail(value))
+    return (typeof value === 'string' && value.length !== 0 && !validator.isEmail(value)) || value.length === 0
   }
 }
 
 /**
- * Verify not an email address.
- *
- * Validator validates only non empty string values, everything else is considered valid.
+ * Verify not an email address if the value is not empty.
  */
-export function IsEmail (validationOptions?: ValidationOptions) {
+export function IsNotEmail (validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {
     registerDecorator({
-      name: 'IsEmail',
+      name: 'IsNotEmail',
       target: object.constructor,
       propertyName: propertyName,
       options: validationOptions,
       constraints: [],
-      validator: IsEmailConstraint
+      validator: IsNotEmailConstraint
     })
   }
 }
