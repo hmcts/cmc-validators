@@ -31,7 +31,7 @@ const invalidContactNames = [
 
 describe('IsNotEmail', () => {
   describe('should have no validation errors when', () => {
-    context('given a valid email address', () => {
+    context('given a valid contact name', () => {
       validContactNames.forEach(name => {
         it(name, () => {
           expect(validateSync(new NotEmailTest(name)), name).to.be.empty
