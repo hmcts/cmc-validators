@@ -12,7 +12,11 @@ import * as validator from 'validator'
 export class IsNotEmailConstraint implements ValidatorConstraintInterface {
 
   validate (value: any, args: ValidationArguments): boolean {
-    return (typeof value === 'string' && value.length !== 0 && !validator.isEmail(value)) || value.length === 0
+    if (value === undefined || value === null) {
+      return true
+    } else {
+      return (value.length === 0 || !validator.isEmail(value))
+    }
   }
 }
 

@@ -52,14 +52,6 @@ describe('IsNotEmail', () => {
       })
     })
 
-    it('given a number', () => {
-      expect(validateSync(new NotEmailTest(123))).to.be.empty
-    })
-
-    it('given an object', () => {
-      expect(validateSync(new NotEmailTest({}))).to.be.empty
-    })
-
     it('given null', () => {
       expect(validateSync(new NotEmailTest(null))).to.be.empty
     })
