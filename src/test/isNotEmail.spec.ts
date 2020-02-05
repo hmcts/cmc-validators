@@ -11,13 +11,13 @@ class NotEmailTest {
   }
 }
 
-const validContactNames = [
+const invalidEmails = [
   'test',
   'first name',
   'first middle last'
 ]
 
-const invalidContactNames = [
+const validEmails = [
   'email@domain.com',
   'email@domain.COM',
   'firstname.lastname@domain.com',
@@ -32,7 +32,7 @@ const invalidContactNames = [
 describe('IsNotEmail', () => {
   describe('should have no validation errors when', () => {
     context('given a valid contact name', () => {
-      validContactNames.forEach(name => {
+      invalidEmails.forEach(name => {
         it(name, () => {
           expect(validateSync(new NotEmailTest(name)), name).to.be.empty
         })
@@ -45,7 +45,7 @@ describe('IsNotEmail', () => {
   })
   describe('should have a validation error when', () => {
     context('given an email address', () => {
-      invalidContactNames.forEach(address => {
+      validEmails.forEach(address => {
         it(address, () => {
           expect(validateSync(new NotEmailTest(address))).to.not.be.empty
         })
