@@ -1,6 +1,6 @@
 {
   "name": "@hmcts/cmc-validators",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "HMCTS",
   "license": "MIT",
   "repository": {
@@ -27,28 +27,28 @@
     "@hmcts/class-validator": "^0.9.1-e"
   },
   "devDependencies": {
-    "@types/mocha": "*",
     "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "^7.1.0",
     "@types/chai-spies": "^1.0.0",
-    "typescript": "^3.1.1",
-    "ts-node": "^7.0.1",
-    "nyc": "^13.0.1",
+    "@types/mocha": "*",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "codacy-coverage": "^3.1.0",
     "codecov": "^3.1.0",
-    "sinon-chai": "^3.3.0",
     "mocha": "^5.2.0",
     "mocha-junit-reporter": "^1.18.0",
     "mocha-multi": "^1.0.1",
     "mochawesome": "^3.0.3",
     "moment": "^2.24.0",
+    "nyc": "^13.0.1",
     "punycode": "^2.1.1",
-    "tslint": "^5.11.0",
     "sass-lint": "^1.10.2",
+    "sinon-chai": "^3.3.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
-    "tslint-no-unused-expression-chai": "^0.1.4"
+    "tslint-no-unused-expression-chai": "^0.1.4",
+    "typescript": "^3.1.1"
   },
   "nyc": {
     "extension": [
