@@ -89,6 +89,14 @@ describe('IsValidPostcodeConstraint', () => {
       it('given an empty value', () => {
         expect(validateSync(new ValidPostcodeTest(''))).to.be.not.empty
       })
+
+      it('given a postcode from Scotland', () => {
+        expect(validateSync(new ValidPostcodeTest('EH1 1AF'))).to.not.be.empty
+      })
+
+      it('given a postcode from Northern Ireland', () => {
+        expect(validateSync(new ValidPostcodeTest('BT1 1AA'))).to.not.be.empty
+      })
     })
   })
 })
