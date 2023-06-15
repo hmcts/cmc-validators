@@ -14,8 +14,8 @@ export class IsValidPostcodeConstraint implements ValidatorConstraintInterface {
     if (value === undefined || value === null || args === undefined) {
       return true
     }
-    const UK_POSTCODE_REGEX = /^(([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))[0-9][A-Za-z]{2}))$/
-    const normalised = value.toString().replace(/\s/g,'')
+    const UK_POSTCODE_REGEX = /^(?!.*[GIJKLMNOQVWXZ])([A-PR-UWYZ][0-9][A-HJKPSTUW])\s*([0-9][ABD-HJLNP-UW-Z]{2})$/i
+    const normalised = value.toString().replace(/\s/g, '')
     return validator.matches(normalised, new RegExp(UK_POSTCODE_REGEX))
   }
 
@@ -25,7 +25,7 @@ export class IsValidPostcodeConstraint implements ValidatorConstraintInterface {
 }
 
 /**
- * Verify a valid UK postcode format.
+ * Verify a valid UK postcode format (excluding Scotland and Northern Ireland).
  *
  */
 export function IsValidPostcode (validationOptions?: ValidationOptions) {
